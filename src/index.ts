@@ -1,8 +1,19 @@
 import express from 'express';
+import mongoose from 'mongoose';
 
-const app = express();
 
-app.listen(3001, () => {
-  console.log('server is runnig on http://localhost:3001')
-// eslint-disable-next-line linebreak-style
-});
+
+mongoose.connect('mongodb://127.0.0.1:27017')
+  .then(() => {console.log('conectado ao mongodb')
+  const app = express();
+  const port = 3002;
+
+    app.listen(port, () => {
+      console.log(`server is runing on https://localhost:${port}`);
+    });
+
+})
+
+  .catch(() => console.log('Erro ao conectar ao servidor'));
+
+
