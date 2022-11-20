@@ -14,7 +14,7 @@ const product = await Product.create({
   imagePath,
   price: Number(price),
   category,
-  ingredients: JSON.parse(ingredients),
+  ingredients: ingredients ? JSON.parse(ingredients) : [],
  });
 
   res.status(201).json(product);

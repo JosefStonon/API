@@ -24,9 +24,10 @@ export const Order = model('Order', new Schema({
         required: true,
         ref: 'Product',
       },
-      quantity:
+      quantity:{
       type: Number,
       default: 1,
+      },
     }],
   },
 
